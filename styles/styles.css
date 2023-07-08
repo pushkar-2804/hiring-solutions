@@ -38,7 +38,7 @@ body {
   /* Header */
   
   header {
-    background-color: #f5f5f5;
+    background-color: #E1E8EE;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -55,210 +55,17 @@ body {
   #hero {
     text-align: center;
     padding: 80px 20px;
+    /* background-color: #E1E8EE; */
     background-color: #f9f9f9;
-  }
-  
-  #hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  #hero h2 {
-    font-size: 24px;
-    color: #777;
-    margin-bottom: 40px;
-  }
-  
-  /* Feature Section */
-  
-  #features {
-    padding: 80px 20px;
-    text-align: center;
-    background-color: #fff;
-  }
-  
-  #features h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-  
-  .feature {
-    margin-bottom: 40px;
-  }
-  
-  .feature h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Benefits Section */
-  
-  #benefits {
-    padding: 80px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-  }
-  
-  #benefits h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-  
-  .benefit {
-    margin-bottom: 40px;
-  }
-  
-  .benefit h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Call-to-Action Section */
-  
-  #trial {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #fff;
-  }
-  
-  #trial h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-  
-  #trial h3 {
-    font-size: 24px;
-    color: #777;
-    margin-bottom: 40px;
-  }
-  
-  /* Footer Section */
-  
-  footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .contact-info {
-    margin-top: 20px;
-  }
-  
-  .contact-info li {
-    margin-bottom: 10px;
-  }
-  
-  .contact-info img {
-    width: 24px;
-    margin-right: 10px;
-  }
-  
-  /* Media Queries */
-  
-@media (max-width: 768px) {
-#hero {
-    padding: 60px 20px;
 }
 
 #hero h1 {
-    font-size: 28px;
-}
-
-#hero h2 {
-    font-size: 20px;
-}
-
-#features,
-#benefits,
-#trial {
-    padding: 60px 20px;
-}
-
-#features h2,
-#benefits h2 {
-    font-size: 28px;
-}
-
-.feature h3,
-.benefit h3 {
-    font-size: 20px;
-}
-
-#trial h2 {
-    font-size: 28px;
-}
-
-#trial h3 {
-    font-size: 20px;
-}
-}
-
-/*  */
-/* Global Styles */
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1, h2, h3 {
-    color: #333;
-  }
-  
-  p {
-    color: #666;
-  }
-  
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  /* Header */
-  
-  header {
-    background-color: #f5f5f5;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  /* Hero Section */
-  
-  #hero {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #f9f9f9;
-  }
-  
-  #hero h1 {
     font-size: 36px;
+    margin: auto;
     margin-bottom: 20px;
+    font-style: italic;
+    width: 80%;      
   }
-  
   #hero h2 {
     font-size: 24px;
     color: #777;
@@ -272,6 +79,14 @@ body {
     text-align: center;
     background-color: #fff;
   }
+  .featuresWrap{
+    display: grid;
+    grid-template-columns: auto auto;
+
+  }
+  .featuresWrap>.feature:nth-child(2n){
+    margin-top: 200px;    
+  }
   
   #features h2 {
     font-size: 32px;
@@ -280,30 +95,64 @@ body {
   
   .feature {
     margin-bottom: 40px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+  }
+  .feature img{
+    margin: auto !important;
   }
   
   .feature h3 {
+    padding-left: 10px;
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
+  }
+  .feature p{
+    padding: 10px;
+    width: 80%;
+    margin: auto;
   }
   
   /* Benefits Section */
   
   #benefits {
     padding: 80px 20px;
-    text-align: center;
+    text-align: justify;
     background-color: #f9f9f9;
   }
   
   #benefits h2 {
     font-size: 32px;
     margin-bottom: 40px;
+    text-align: center;
   }
   
   .benefit {
     margin-bottom: 40px;
+    display: flex;
+    /* flex: 1; */
   }
-  
+  #benefits> .benefit:nth-of-type(2n){
+    flex-direction: row-reverse;
+  }
+  .benefitImg{
+    width: 50%;
+  }
+  .benefitImg img{
+    margin: auto;
+    /* border: 2px solid red; */
+    object-fit: contain;
+    width: 80%;    
+  }
+  .benefitDetails{
+    width: 50%;
+    align-self: center;
+    padding: 50px;
+  }
   .benefit h3 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -314,7 +163,7 @@ body {
   #trial {
     text-align: center;
     padding: 80px 20px;
-    background-color: #fff;
+    background-color: #E1E8EE;
   }
   
   #trial h2 {
@@ -347,6 +196,47 @@ body {
   .contact-info img {
     width: 24px;
     margin-right: 10px;
+  }
+
+
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 24px;
+    height: 18px;
+  }
+  
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Navbar Links */
+
+.navbar-links {
+    display: flex;
+  }
+  
+  .navbar-links li {
+    margin-right: 20px;
+  }
+
+
+  /* Animations */
+  .reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+  }
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
   }
   
   /* Media Queries */
@@ -357,11 +247,11 @@ body {
     }
   
     #hero h1 {
-      font-size: 28px;
+      font-size: 4rem;
     }
   
     #hero h2 {
-      font-size: 20px;
+      font-size: 3rem;
     }
   
     #features,
@@ -372,36 +262,55 @@ body {
   
     #features h2,
     #benefits h2 {
-      font-size: 28px;
+      font-size: 2rem;
     }
   
     .feature h3,
     .benefit h3 {
-      font-size: 20px;
+      font-size: 3rem;
     }
   
     #trial h2 {
-      font-size: 28px;
+      font-size: 3rem;
     }
   
     #trial h3 {
-      font-size: 20px;
+      font-size: 2.5rem;
     }
   
     /* Responsive Navigation */
   
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    .hamburger-menu {
+        display: flex;
+      }
+    
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        margin-top: 20px;
+      }
+    
+      .navbar-links li {
+        margin-bottom: 10px;
+      }
   
-    nav {
-      margin-top: 20px;
-    }
+    /* Adjust hamburger menu styles */
   
-    nav ul li {
-      display: block;
-      margin-bottom: 10px;
-    }
+    .line {
+        background-color: #333;
+        transition: transform 0.3s ease-in-out;
+      }
+    
+      .change .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-4px, 4px);
+      }
+    
+      .change .line:nth-child(2) {
+        opacity: 0;
+      }
+    
+      .change .line:nth-child(3) {
+        transform: rotate(45deg) translate(-4px, -4px);
+      }
   }
   
