@@ -46,6 +46,7 @@ header {
 }
 header img{
   width: 20%;
+  max-width: 200px;
 }
   
 nav ul li {
