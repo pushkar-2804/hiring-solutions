@@ -62,7 +62,9 @@ nav ul li {
   /* background-color: #E1E8EE; */
   background-color: #f9f9f9;
 }
-
+.heroImg{
+  width: 40%;
+}
 #hero h1 {
   font-size: 36px;
   margin: auto;
@@ -86,10 +88,9 @@ nav ul li {
 .featuresWrap{
   display: grid;
   grid-template-columns: auto auto;
-
 }
 .featuresWrap>.feature:nth-child(2n){
-  margin-top: 200px;    
+  margin-top: 200px;  
 }
   
 #features h2 {
@@ -98,7 +99,7 @@ nav ul li {
 }
   
 .feature {
-  margin: auto;
+  /* margin: auto; */
   margin-bottom: 40px;
   width: 90%;
   display: flex;
@@ -111,7 +112,7 @@ nav ul li {
 .feature img{
   margin: auto !important;
   object-fit: contain;
-  width: 100%;
+  width: 70%;
 }
   
 .feature h3 {
@@ -260,7 +261,9 @@ footer {
   #hero {
     padding: 60px 20px;
   }
-
+  .heroImg{
+    width: 60%;
+  }
   #hero h1 {
     font-size: 2rem;
     width: 100%;
@@ -315,6 +318,9 @@ footer {
 }
 
 @media screen and (max-width: 650px) {
+  .heroImg{
+    width: 70%;
+  }
   header{
     padding: 10px;
   }
@@ -332,6 +338,9 @@ footer {
   }
 }
 @media screen and (max-width: 510px) {
+  .heroImg{
+    width: 90%;
+  }
   #features,
   #benefits,
   #trial {

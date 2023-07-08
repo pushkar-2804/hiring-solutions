@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/canditdates.css" />
+    <title>Candidate Search</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Candidate Search</h1>
+      <form id="searchForm">
+        <input type="text" name="location" placeholder="Location" />
+        <input type="text" name="jobRoles" placeholder="Job Roles" />
+        <button type="submit">Search</button>
+      </form>
+      <div id="candidatesList"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

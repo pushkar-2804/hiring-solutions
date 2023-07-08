@@ -1,8 +1,3 @@
-// Add any custom JavaScript functionality here
-// (if required for your landing page)
-
-// Example: Smooth scrolling for anchor links
-
 document.addEventListener("DOMContentLoaded", function () {
   var anchorLinks = document.querySelectorAll('a[href^="#"]');
 
