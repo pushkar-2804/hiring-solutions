@@ -69,9 +69,12 @@ function displayCandidates(candidates) {
     const candidateItem = document.createElement("div");
     candidateItem.classList.add("candidate");
     candidateItem.innerHTML = `
-        <h3>${candidate.name}</h3>
-        <p>Location: ${candidate.location}</p>
-        <p>Job Role: ${candidate.job}</p>
+        <div class="candidate">
+          
+          <h3>${candidate.name}</h3><span>${candidate.email}</span          
+          <span>Location: ${candidate.location}</span>
+          <span>Job Role: ${candidate.job}</span>
+        </div>
       `;
 
     candidatesList.appendChild(candidateItem);

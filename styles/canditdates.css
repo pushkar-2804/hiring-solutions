@@ -56,3 +56,30 @@ body {
     text-align: left;
   }
   
+
+.candidate{
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .container{
+    padding: 40px 20px;
+    width: 80%;
+  }
+  #searchForm{
+    display: flex;
+    margin: auto;    
+  }
+}
+@media screen and (max-width: 600px) {
+  .container{
+    width: 100%;
+  }
+  #searchForm{
+    flex-direction: column;
+  }
+  #searchForm>*{
+    margin: 5px;
+  }
+}
