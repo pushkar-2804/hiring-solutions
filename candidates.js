@@ -1,3 +1,25 @@
+const token = localStorage.getItem("token");
+
+function fetchAllCandidates() {
+  axios
+    .get("http://localhost:3000/api/candidate/all", {
+      headers: {
+        Authorization: token,
+      },
+    })
+    .then((response) => {
+      // Handle the retrieved candidates
+      displayCandidates(response.data.candidates);
+    })
+    .catch((error) => {
+      console.error("Error fetching all candidates:", error);
+      alert("An error occurred while fetching all candidates");
+    });
+}
+
+// Call fetchAllCandidates when the page loads
+window.addEventListener("DOMContentLoaded", fetchAllCandidates);
+
 // Search form submission
 document
   .getElementById("searchForm")
@@ -8,21 +30,24 @@ document
     const location = document.querySelector(
       '#searchForm input[name="location"]'
     ).value;
-    const jobRoles = document.querySelector(
-      '#searchForm input[name="jobRoles"]'
+    const jobRole = document.querySelector(
+      '#searchForm input[name="jobRole"]'
     ).value;
 
     // Send search request to the server
     axios
-      .get("/search-candidates", {
-        params: {
-          location,
-          jobRoles,
-        },
-      })
+      .post(
+        "http://localhost:3000/api/candidate/search",
+        { location, jobRole },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
       .then((response) => {
         // Handle the retrieved candidates
-        displayCandidates(response.data);
+        displayCandidates(response.data.candidates);
       })
       .catch((error) => {
         console.error("Error during candidate search:", error);
@@ -46,21 +71,9 @@ function displayCandidates(candidates) {
     candidateItem.innerHTML = `
         <h3>${candidate.name}</h3>
         <p>Location: ${candidate.location}</p>
-        <p>Job Role: ${candidate.jobRole}</p>
-        <button class="rankButton" data-id="${candidate.id}">Rank</button>
+        <p>Job Role: ${candidate.job}</p>
       `;
-
-    candidateItem
-      .querySelector(".rankButton")
-      .addEventListener("click", handleRanking);
 
     candidatesList.appendChild(candidateItem);
   });
 }
-
-//   // Function to handle candidate ranking
-//   function handleRanking(event) {
-//     const candidateId = event.target.getAttribute('data-id');
-//     // Perform the necessary ranking action
-//     // ...
-//   }

@@ -8,31 +8,52 @@
   </head>
   <body>
     <div class="form-structor">
-      <div class="signup">
+      <form class="signup" id="signupForm">
         <h2 class="form-title" id="signup"><span>or </span>Sign up</h2>
         <div class="form-holder">
-          <input type="text" class="input" placeholder="Company Name" />
-          <input type="email" class="input" placeholder="Email" />
-          <input type="password" class="input" placeholder="Password" />
+          <input
+            type="text"
+            class="input"
+            placeholder="Company Name"
+            id="signupCompanyName"
+          />
+          <input
+            type="email"
+            class="input"
+            placeholder="Email"
+            id="signupEmail"
+          />
+          <input
+            type="password"
+            class="input"
+            placeholder="Password"
+            id="signupPassword"
+          />
         </div>
         <button class="submit-btn">Sign up</button>
-      </div>
-      <div class="login slide-up">
+      </form>
+      <form class="login slide-up" id="loginForm">
         <div class="center">
           <h2 class="form-title" id="login"><span>or </span>Log in</h2>
           <div class="form-holder">
-            <input type="email" class="input" placeholder="Email" />
-            <input type="password" class="input" placeholder="Password" />
+            <input
+              type="email"
+              class="input"
+              placeholder="Email"
+              id="loginEmail"
+            />
+            <input
+              type="password"
+              class="input"
+              placeholder="Password"
+              id="loginPassword"
+            />
           </div>
-          <button
-            class="submit-btn"
-            onclick="window.location.assign('candidates.html')"
-          >
-            Log in
-          </button>
+          <button class="submit-btn">Log in</button>
         </div>
-      </div>
+      </form>
     </div>
     <script src="auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>

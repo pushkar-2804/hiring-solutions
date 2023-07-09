@@ -42,3 +42,6 @@ function reveal() {
 }
 window.addEventListener("scroll", reveal);
 reveal();
+
+const token = localStorage.getItem("token");
+if (token) localStorage.removeItem("token");

@@ -4,19 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/canditdates.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
     <title>Candidate Search</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Candidate Search</h1>
-      <form id="searchForm">
-        <input type="text" name="location" placeholder="Location" />
-        <input type="text" name="jobRoles" placeholder="Job Roles" />
-        <button type="submit">Search</button>
-      </form>
-      <div id="candidatesList"></div>
+    <header>
+      <img src="./assets/logo.png" alt="Online Recruitment Solution Logo" />
+      <nav>
+        <ul>
+          <li class=""><a href="index.html">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="searchWrapper">
+      <div class="container">
+        <h1>Candidate Search</h1>
+        <form id="searchForm">
+          <input type="text" name="location" placeholder="Location" />
+          <input type="text" name="jobRole" placeholder="Job Roles" />
+          <button type="submit">Search</button>
+        </form>
+        <div id="candidatesList"></div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
+    <script src="candidates.js"></script>
   </body>
 </html>

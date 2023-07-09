@@ -1,11 +1,10 @@
-console.clear();
+// console.clear();
 
 const loginBtn = document.getElementById("login");
 const signupBtn = document.getElementById("signup");
 
 loginBtn.addEventListener("click", (e) => {
   let parent = e.target.parentNode.parentNode;
-  console.log("Enter");
   loginBtn.innerText = "Login";
   Array.from(e.target.parentNode.parentNode.classList).find((element) => {
     if (element !== "slide-up") {
@@ -30,3 +29,57 @@ signupBtn.addEventListener("click", (e) => {
     }
   });
 });
+
+// Function to handle login
+const handleLogin = (event) => {
+  event.preventDefault();
+
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+
+  axios
+    .post("https://hiring-yjwj.onrender.com/api/auth/login", {
+      email,
+      password,
+    })
+    .then((response) => {
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      window.location.assign("candidates.html");
+      console.log("Login successful");
+    })
+    .catch((error) => {
+      console.error("Error during login:", error);
+      alert("An error occurred during login");
+    });
+};
+
+// Function to handle signup
+const handleSignup = (event) => {
+  event.preventDefault();
+
+  const companyName = document.getElementById("signupCompanyName").value;
+  const email = document.getElementById("signupEmail").value;
+  const password = document.getElementById("signupPassword").value;
+
+  axios
+    .post("http://localhost:3000/api/auth/signup", {
+      companyName,
+      email,
+      password,
+    })
+    .then((response) => {
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      window.location.assign("candidates.html");
+      console.log("Signup successful");
+    })
+    .catch((error) => {
+      console.error("Error during signup:", error);
+      alert("An error occurred during signup");
+    });
+};
+
+// Attach event listeners to login and signup forms
+document.getElementById("loginForm").addEventListener("submit", handleLogin);
+document.getElementById("signupForm").addEventListener("submit", handleSignup);
