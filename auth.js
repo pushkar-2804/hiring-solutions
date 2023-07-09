@@ -63,7 +63,7 @@ const handleSignup = (event) => {
   const password = document.getElementById("signupPassword").value;
 
   axios
-    .post("http://localhost:3000/api/auth/signup", {
+    .post("https://hiring-yjwj.onrender.com/api/auth/signup", {
       companyName,
       email,
       password,

@@ -2,7 +2,7 @@ const token = localStorage.getItem("token");
 
 function fetchAllCandidates() {
   axios
-    .get("http://localhost:3000/api/candidate/all", {
+    .get("https://hiring-yjwj.onrender.com/api/candidate/all", {
       headers: {
         Authorization: token,
       },
@@ -37,7 +37,7 @@ document
     // Send search request to the server
     axios
       .post(
-        "http://localhost:3000/api/candidate/search",
+        "https://hiring-yjwj.onrender.com/api/candidate/search",
         { location, jobRole },
         {
           headers: {
