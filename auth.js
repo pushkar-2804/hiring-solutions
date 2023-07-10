@@ -38,23 +38,27 @@ const handleLogin = (event) => {
 
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
-  loginFormBtn.disabled = true;
-  loginFormBtn.innerHTML = "Loading...";
-  axios
-    .post("https://hiring-yjwj.onrender.com/api/auth/login", {
-      email,
-      password,
-    })
-    .then((response) => {
-      const token = response.data.token;
-      localStorage.setItem("token", token);
-      window.location.assign("candidates.html");
-      console.log("Login successful");
-    })
-    .catch((error) => {
-      console.error("Error during login:", error);
-      alert("An error occurred during login");
-    });
+  if (email && password) {
+    loginFormBtn.disabled = true;
+    loginFormBtn.innerHTML = "Loading...";
+    axios
+      .post("https://hiring-yjwj.onrender.com/api/auth/login", {
+        email,
+        password,
+      })
+      .then((response) => {
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        window.location.assign("candidates.html");
+        console.log("Login successful");
+      })
+      .catch((error) => {
+        loginFormBtn.disabled = false;
+        loginFormBtn.innerHTML = "Login";
+        console.error("Error during login:", error);
+        alert("An error occurred during login");
+      });
+  } else alert("An error occurred during signup");
 };
 
 // Function to handle signup
@@ -64,24 +68,28 @@ const handleSignup = (event) => {
   const companyName = document.getElementById("signupCompanyName").value;
   const email = document.getElementById("signupEmail").value;
   const password = document.getElementById("signupPassword").value;
-  signupFormBtn.disabled = true;
-  signupFormBtn.innerHTML = "Loading...";
-  axios
-    .post("https://hiring-yjwj.onrender.com/api/auth/signup", {
-      companyName,
-      email,
-      password,
-    })
-    .then((response) => {
-      const token = response.data.token;
-      localStorage.setItem("token", token);
-      window.location.assign("candidates.html");
-      console.log("Signup successful");
-    })
-    .catch((error) => {
-      console.error("Error during signup:", error);
-      alert("An error occurred during signup");
-    });
+  if (email && password && companyName) {
+    signupFormBtn.disabled = true;
+    signupFormBtn.innerHTML = "Loading...";
+    axios
+      .post("https://hiring-yjwj.onrender.com/api/auth/signup", {
+        companyName,
+        email,
+        password,
+      })
+      .then((response) => {
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        window.location.assign("candidates.html");
+        console.log("Signup successful");
+      })
+      .catch((error) => {
+        signupFormBtn.disabled = false;
+        signupFormBtn.innerHTML = "Signup";
+        console.error("Error during signup:", error);
+        alert("An error occurred during signup");
+      });
+  } else alert("Fields should not be empty");
 };
 
 // Attach event listeners to login and signup forms
