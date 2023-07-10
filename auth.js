@@ -1,7 +1,9 @@
 // console.clear();
 
 const loginBtn = document.getElementById("login");
+const loginFormBtn = document.getElementById("loginFormBtn");
 const signupBtn = document.getElementById("signup");
+const signupFormBtn = document.getElementById("signupFormBtn");
 
 loginBtn.addEventListener("click", (e) => {
   let parent = e.target.parentNode.parentNode;
@@ -36,7 +38,8 @@ const handleLogin = (event) => {
 
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
-
+  loginFormBtn.disabled = true;
+  loginFormBtn.innerHTML = "Loading...";
   axios
     .post("https://hiring-yjwj.onrender.com/api/auth/login", {
       email,
@@ -61,7 +64,8 @@ const handleSignup = (event) => {
   const companyName = document.getElementById("signupCompanyName").value;
   const email = document.getElementById("signupEmail").value;
   const password = document.getElementById("signupPassword").value;
-
+  signupFormBtn.disabled = true;
+  signupFormBtn.innerHTML = "Loading...";
   axios
     .post("https://hiring-yjwj.onrender.com/api/auth/signup", {
       companyName,
