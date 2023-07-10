@@ -7,11 +7,11 @@ const searchCandidate = async (req, res) => {
     const searchCriteria = {};
 
     if (location) {
-      searchCriteria.location = location;
+      searchCriteria.location = { $regex: new RegExp(location, "i") };
     }
 
     if (jobRole) {
-      searchCriteria.job = jobRole;
+      searchCriteria.job = { $regex: new RegExp(jobRole, "i") };
     }
 
     const candidates = await Candidate.find(searchCriteria).select(
