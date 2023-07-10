@@ -19,13 +19,13 @@ function fetchAllCandidates() {
 
 // Call fetchAllCandidates when the page loads
 window.addEventListener("DOMContentLoaded", fetchAllCandidates);
-
+const searchCandidateBtn = document.getElementById("searchCandidateBtn");
 // Search form submission
 document
   .getElementById("searchForm")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
-
+    searchCandidateBtn.innerHTML = "Loading...";
     // Get form inputs
     const location = document.querySelector(
       '#searchForm input[name="location"]'
@@ -48,8 +48,10 @@ document
       .then((response) => {
         // Handle the retrieved candidates
         displayCandidates(response.data.candidates);
+        searchCandidateBtn.innerHTML = "Search";
       })
       .catch((error) => {
+        searchCandidateBtn.innerHTML = "Search";
         console.error("Error during candidate search:", error);
         alert("An error occurred during candidate search");
       });
